@@ -4,7 +4,8 @@ const PlaceSchema = new Schema({
   name: String,
   image: String,
   description:String,
-  price: Number
+  price: Number,
+  address:String
 })
 
 PlaceSchema.set('toJSON', {

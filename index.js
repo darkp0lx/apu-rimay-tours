@@ -1,6 +1,8 @@
 require('./mongo')
 const Product = require('./models/Product')
+
 const cors = require('cors')
+
 var express = require('express')
 const Place=require('./models/Place')
 var app = express()
@@ -57,13 +59,14 @@ app.get('/api/places/:name', async (req, res, next) => {
 
 
 app.post('/api/places', async (req, res) => {
-  const { name, image, price,description } = req.body
+  const { name, image, price,description,address } = req.body
 
   const newPlace = new Place({
     name,
     image,
     price,
-    description
+    description,
+    address
   })
 
   if (!name) {
